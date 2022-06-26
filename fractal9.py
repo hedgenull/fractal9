@@ -194,6 +194,7 @@ commands = {
     "τ": ((lambda: tau), "literal tau"),  # Literal tau (2 times pi)
     "ε": ((lambda: e), "literal e"),  # Literal e (Euler's number)
     "∞": ((lambda: inf), "literal infinity"),  # Literal infinity
+    "∘": ((lambda: " "), "literal space character (' ')"),  # Literal space character
     # OTHER
     "∅": ((lambda x: int(len(x) == 0)), "empty collection"),  # Empty collection
     "∩": ((lambda x: x[0]), "first element"),  # First element
