@@ -47,17 +47,17 @@ def interpret(code: str) -> None:
 
 
 def swap_two():
-    """swap the top two elements on the stack"""
+    """swap top two elements on stack"""
     args[-2], args[-1] = args[-1], args[-2]
 
 
 def swap_three():
-    """swap the top three elements on the stack"""
+    """swap top three elements on stack"""
     args[-3], args[-2], args[-1] = args[-1], args[-2], args[-3]
 
 
 def get_numerical_input(prompt: str = ""):
-    """get input as an integer"""
+    """get input as integer"""
     i = input(prompt)
 
     if i.isdigit():
@@ -95,15 +95,16 @@ commands = {
     "…": ((lambda x: time.sleep(x)), "sleep (in seconds)"),  # Sleep
     ".": ((lambda: exit()), "exit program"),  # Quit program
     # I/O
-    "`": (
-        (lambda x: print(chr(x)) if type(x) == int else print(x)),
-        "print as string",
-    ),  # Print character(s)
-    "'": (
+    "≻": (
         (lambda x: print(x) if type(x) == int else print(ord(x))),
         "print as number",
     ),  # Print number(s)
-    "«": (get_numerical_input, get_numerical_input.__doc__),  # Get input (integer)
+    "≽": (
+        (lambda x: print(chr(x)) if type(x) == int else print(x)),
+        "print as string",
+    ),  # Print character(s)
+    "≺": (get_numerical_input, get_numerical_input.__doc__),  # Get input (integer)
+    "≼": (input(), "get input as string"),  # Get input (string)
     # STACK
     '"': ((lambda: print(*args)), "print stack"),  # Print stack
     "⮄": (swap_two, swap_two.__doc__),  # Swap two top elements
