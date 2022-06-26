@@ -73,7 +73,7 @@ def f9_help():
 
 commands = {
     # STRING
-    "'": ((lambda x: ord(x))),  # String to integer
+    "'": ((lambda x: ord(x[0]))),  # String to integer
     '"': ((lambda x: chr(x))),  # Integer to string
     "~": ((lambda x, y, z: x.replace(y, z)), "replace in string"),  # String replacement
     "〟": ((lambda x: x.lower()), "convert to lowercase"),  # Lowercase conversion
