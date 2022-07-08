@@ -18,7 +18,7 @@ def main(filename: str) -> None:
 
 
 def interpret(code: str) -> None:
-    """Interpret Fractal code.
+    """Interpret Fractal9 code.
 
     Args:
         code (str): Source code to interpret.
