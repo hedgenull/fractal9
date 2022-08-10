@@ -23,7 +23,6 @@ def interpret(code: str) -> None:
     Args:
         code (str): Source code to interpret.
     """
-
     for c in code.split():
         if c.isdigit():
             c = int(c)
@@ -34,7 +33,7 @@ def interpret(code: str) -> None:
                 print("error: not enough arguments")
             else:
                 try:
-                    funargs = [args.pop() for arg in range(argc)]
+                    funargs = [args.pop() for _ in range(argc)]
                     funargs.reverse()
                     res = f(*funargs)
                 except TypeError as e:
@@ -59,10 +58,7 @@ def swap_three():
 def get_numerical_input(prompt: str = ""):
     """get input as integer"""
     i = input(prompt)
-
-    if i.isdigit():
-        return int(i)
-    return ord(i[0])
+    return int(i) if i.isdigit() else ord(i[0])
 
 
 def f9_help():
